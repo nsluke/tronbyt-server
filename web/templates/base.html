@@ -48,6 +48,11 @@
             <a href="/auth/register">{{ t .Localizer "Create User" }}</a>
         </li>
         {{ end }}
+        {{ if .HasConnections }}
+        <li>
+            <a href="/connections">{{ t .Localizer "Connections" }}</a>
+        </li>
+        {{ end }}
         <li>
             <a href="/auth/edit">{{ .User.Username }}</a>
         </li>
@@ -118,6 +123,11 @@
         {{ if .User.IsAdmin }}
         <li>
             <a href="/auth/register" onclick="closeMobileMenu()">{{ t .Localizer "Create User" }}</a>
+        </li>
+        {{ end }}
+        {{ if .HasConnections }}
+        <li>
+            <a href="/connections" onclick="closeMobileMenu()">{{ t .Localizer "Connections" }}</a>
         </li>
         {{ end }}
         <li>
